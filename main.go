@@ -9,6 +9,7 @@ import (
 	httpUtils "go-demo/utils/http"
 	"go-demo/utils/logger"
 	"go-demo/utils/mysql"
+	"go-demo/utils/pgsql"
 	"go-demo/utils/redis"
 
 	"log"
@@ -136,6 +137,12 @@ func Init() error {
 
 	//初始化MySQL
 	err = mysql.InitMySQLPool()
+	if err != nil {
+		return err
+	}
+
+	//初始化PgSQL
+	err = pgsql.InitPgSQLPool()
 	if err != nil {
 		return err
 	}

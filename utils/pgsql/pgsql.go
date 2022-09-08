@@ -23,7 +23,7 @@ var PgsqlConnPool map[string][]*gorm.DB
 var PgsqlConf map[string]config.PgsqlModuleConfig
 
 //初始化pgsql 入口
-func InitMySQLPool() error {
+func InitPgSQLPool() error {
 	switch config.Config.Env {
 	case "local":
 		PgsqlConf = local.PgsqlConf
