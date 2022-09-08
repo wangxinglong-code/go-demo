@@ -1,0 +1,7 @@
+bin/*
+.DS_Store
+main
+.idea
+*.log
+./idea
+go.sum

@@ -1,0 +1,25 @@
+# 基本配置
+Env = "release" # 环境: pre 测试 beta 预发 release 生产
+Mode="release" #release debug test gin.mode
+APPURL = ""
+AppName = "go-demo"
+
+# 端口
+Port=3003
+
+# pprof端口
+PprofPort=9003
+
+RpcPort=30030
+
+# log
+[log]
+    #debug info warn error
+    LogLevel = "debug"
+    LogFileStdout = "./go-demo.log"
+    LogFileErrorStdout = "./go-demo.error.log"
+    AppKey = "go-demo"
+
+# 远程服务Host
+[remoteHost]
+    ServiceEncyclopediaHTMLHost = ""

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "protobuf/app/go_demo";
+
+//protoc --go_out=plugins=grpc:grpc/ grpc/protocol/app/user/GoDemo.proto
+
+service GoDemoAction {
+  rpc GetUser (GetUserRequest) returns (GetUserReply) {}
+}
+
+//
+message GetUserRequest {
+  string req_id = 1;
+  string req_source = 2;
+  int32 uid = 3;
+}
+
+message GetUserReply {
+  string req_id = 1;
+  string req_source = 2;
+  int32 uid = 3;
+  string name = 4;
+  int32 age = 5;
+}
