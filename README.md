@@ -18,7 +18,7 @@
 │   └── api                     // 自定义控制器二级目录
 │       └── apiTest.go          // 具体控制器逻辑代码
 │   └── xxx                     // 可新增其他目录
-├── docs                        // 项目文档，可编写接口文档和sql 文件等
+├── docs                        // 开发规范，项目文档，可编写接口文档和sql 文件等
 ├── middleware                  // 中间件目录
 ├── models                      // 数据库model文件目录
 ├── routers                     // 项目路由文件目录
@@ -27,6 +27,7 @@
 │   └── common                  // 通用配置目录。如通用函数、变量、方法等
 │   └── config                  // 配置toml 映射
 │   └── http                    // 通用http封装方法，如构造post,get等 
+│   └── kaproxy                 // kafka
 │   └── logger                  // 通用日志组件封装
 │   └── mysql                   // 通用mysql 连接池封装
 │   └── pgsql                   // 通用pgsql 连接池封装
