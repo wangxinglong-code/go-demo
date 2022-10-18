@@ -32,6 +32,7 @@
 │   └── mysql                   // 通用mysql 连接池封装
 │   └── pgsql                   // 通用pgsql 连接池封装
 │   └── redis                   // 通用redis 连接池封装
+│   └── compress                // 压缩/解压工具封装
 │   └── remote                  // 远程服务host/api目录
 ├── go.mod                      // go module 文件
 ├── main.go                     // 项目主入口文件，包含初始化、连接池等
