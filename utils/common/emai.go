@@ -13,12 +13,11 @@ const (
 )
 
 // addressee:收件人
-// sendName:发件人昵称
 // title:主题
 // content:内容
-func SendMail(addressee, sendName, title, content string) error {
+func SendMail(addressee, title, content string) error {
 	m := gomail.NewMessage()
-	m.SetHeader("From", m.FormatAddress(USER_NAME, sendName))
+	m.SetHeader("From", m.FormatAddress(USER_NAME, SENDER_NAME))
 	m.SetHeader("To", addressee)
 	m.SetHeader("Subject", title)
 	m.SetBody("text/html", content)
