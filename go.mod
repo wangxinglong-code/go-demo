@@ -18,6 +18,8 @@ require (
 	gorm.io/plugin/dbresolver v1.2.3
 )
 
+require gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
+
 require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
@@ -56,5 +58,6 @@ require (
 	golang.org/x/sys v0.0.0-20220408201424-a24fb2fb8a0f // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013 // indirect
+	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
