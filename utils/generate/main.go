@@ -152,7 +152,7 @@ func create(dbType, path string, list []*Base) string {
 			// 	continue
 			// }
 
-			template := modelTemplate
+			template := codeTemplate
 
 			// set template
 			template = setTableTemplate(template, getPackageName(path), tableStruct, tableNameTitle, k)
@@ -365,7 +365,7 @@ var PostgreSqlFieldType2GoType = map[string]string{
 	"xml":           "string",
 }
 
-const modelTemplate = `
+const codeTemplate = `
 package {package_name}
 
 import (
