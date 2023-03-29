@@ -85,8 +85,8 @@ func InitPgsqlConn(pgsqlClusterConfig config.PgsqlClusterConfig, pgsqlRuleConfig
 		},
 	)
 
-	dsnMaster := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", pgsqlClusterConfig.Master.User, pgsqlClusterConfig.Master.Password, pgsqlClusterConfig.Master.Host, pgsqlClusterConfig.Master.Database)
-	dsnSlave := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", pgsqlClusterConfig.Slave.User, pgsqlClusterConfig.Slave.Password, pgsqlClusterConfig.Slave.Host, pgsqlClusterConfig.Slave.Database)
+	dsnMaster := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable TimeZone=UTC", pgsqlClusterConfig.Master.Host, pgsqlClusterConfig.Master.Port, pgsqlClusterConfig.Master.User, pgsqlClusterConfig.Master.Password, pgsqlClusterConfig.Master.Database)
+	dsnSlave := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable TimeZone=UTC", pgsqlClusterConfig.Master.Host, pgsqlClusterConfig.Master.Port, pgsqlClusterConfig.Master.User, pgsqlClusterConfig.Master.Password, pgsqlClusterConfig.Master.Database)
 	DB, err := gorm.Open(postgres.Open(dsnMaster), &gorm.Config{Logger: pgsqlLogger})
 	if err != nil {
 		return nil, err

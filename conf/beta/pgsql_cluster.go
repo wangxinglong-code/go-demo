@@ -17,13 +17,15 @@ var PgsqlConf = map[string]config.PgsqlModuleConfig{
 		Nodes: map[int]config.PgsqlClusterConfig{
 			0: {
 				Master: config.DbConfig{
-					Host:     "127.0.0.1:5432",
+					Host:     "127.0.0.1",
+					Port:     5432,
 					User:     "go_demo",
 					Password: "123456",
 					Database: "go-demo-db",
 				},
 				Slave: config.DbConfig{
-					Host:     "127.0.0.1:5432",
+					Host:     "127.0.0.1",
+					Port:     5432,
 					User:     "go_demo",
 					Password: "123456",
 					Database: "go-demo-db",

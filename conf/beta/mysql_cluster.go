@@ -17,13 +17,15 @@ var MysqlConf = map[string]config.MysqlModuleConfig{
 		Nodes: map[int]config.MysqlClusterConfig{
 			0: {
 				Master: config.DbConfig{
-					Host:     "127.0.0.1:3306",
+					Host:     "127.0.0.1",
+					Port:     3306,
 					User:     "go_demo",
 					Password: "123456",
 					Database: "go-demo-db",
 				},
 				Slave: config.DbConfig{
-					Host:     "127.0.0.1:3306",
+					Host:     "127.0.0.1",
+					Port:     3306,
 					User:     "go_demo",
 					Password: "123456",
 					Database: "go-demo-db",

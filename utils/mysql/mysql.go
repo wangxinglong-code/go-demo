@@ -90,8 +90,8 @@ func InitMysqlConn(mysqlClusterConfig config.MysqlClusterConfig, mysqlRuleConfig
 		},
 	)
 
-	dsnMaster := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlClusterConfig.Master.User, mysqlClusterConfig.Master.Password, mysqlClusterConfig.Master.Host, mysqlClusterConfig.Master.Database)
-	dsnSlave := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlClusterConfig.Slave.User, mysqlClusterConfig.Slave.Password, mysqlClusterConfig.Slave.Host, mysqlClusterConfig.Slave.Database)
+	dsnMaster := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlClusterConfig.Master.User, mysqlClusterConfig.Master.Password, mysqlClusterConfig.Master.Host, mysqlClusterConfig.Master.Port, mysqlClusterConfig.Master.Database)
+	dsnSlave := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlClusterConfig.Slave.User, mysqlClusterConfig.Slave.Password, mysqlClusterConfig.Slave.Host, mysqlClusterConfig.Master.Port, mysqlClusterConfig.Slave.Database)
 	DB, err := gorm.Open(mysql.Open(dsnMaster), &gorm.Config{Logger: mysqlLogger})
 	if err != nil {
 		return nil, err

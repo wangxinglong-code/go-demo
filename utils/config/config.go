@@ -47,6 +47,7 @@ type LogConf struct {
 
 type DbConfig struct {
 	Host     string
+	Port     int
 	Password string
 	User     string
 	Database string
